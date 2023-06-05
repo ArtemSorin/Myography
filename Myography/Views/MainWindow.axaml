@@ -19,10 +19,13 @@
 		<Grid Margin="10">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="300" />
-				<ColumnDefinition Width="100"/>
+				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="Auto"/>
@@ -41,10 +44,25 @@
 			<TextBlock Grid.Column="0" Grid.Row="1" Text="Расстояние от монитора до пациента:"
 		   VerticalAlignment="Center">
 			</TextBlock>
+			<TextBlock Grid.Column="0" Grid.Row="2" Text="Графические формы паттерна:"
+		   VerticalAlignment="Center">
+			</TextBlock>
+			<TextBlock Grid.Column="0" Grid.Row="3" Text="Частота смены паттерна:"
+		   VerticalAlignment="Center">
+			</TextBlock>
 			<TextBox x:Name="DistanceBox" Grid.Column="1" Grid.Row="1">
-
 			</TextBox>
-			<Button x:Name="OpenButton" Grid.Column="0" Grid.Row="2" Content="Создать"></Button>
+			<ComboBox x:Name="FormBox" Grid.Column="1" Grid.Row="2" SelectedIndex="0"
+		  Items="{Binding FormsItems}" SelectedItem="{Binding SelectedFormItem}">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding}" />
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<TextBox x:Name="DBox" Grid.Column="1" Grid.Row="3">
+			</TextBox>
+			<Button x:Name="OpenButton" Grid.Column="0" Grid.Row="4" Content="Создать"></Button>
 		</Grid>
 	</DockPanel>
 	

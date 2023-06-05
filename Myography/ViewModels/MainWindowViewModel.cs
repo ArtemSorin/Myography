@@ -19,6 +19,20 @@ namespace Myography.ViewModels
                 }
             }
         }
+        private string _selectedItem1;
+        public List<string> FormsItems { get; } = new List<string> { "шахматное поле", "вертикальные полосы", "горизонтальные полосы" };
+        public string SelectedFormItem
+        {
+            get => _selectedItem1;
+            set
+            {
+                if (_selectedItem1 != value)
+                {
+                    _selectedItem1 = value;
+                    OnPropertyChanged(nameof(SelectedFormItem));
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)

@@ -7,8 +7,6 @@ namespace Myography.Views
 {
     public partial class MainWindow : Window
     {
-        public List<string> Test3 { get; set; } = new List<string>(new string[] { "4:3", "5:4", "16:9", "16:10", "21:9" });
-        //public List<string> Tests { get; set; } = new List<string>(new string[] { "4:3", "5:4", "16:9" });
         public MainWindow()
         {
             InitializeComponent();
